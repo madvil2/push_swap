@@ -1,0 +1,4 @@
+cmake-build-debug
+.obj/
+.idea/
+push_swap
