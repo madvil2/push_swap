@@ -31,4 +31,15 @@ typedef struct s_stack_node
 	struct s_stack_node	*prev;
 }	t_stack_node;
 
+//utils.c
+int		stack_len(t_stack_node *stack);
+bool	is_stack_sorted(t_stack_node *stack);
+t_stack_node	*my_lstlast(t_stack_node *lst);
+void	free_on_error(t_stack_node **a, char **arr, bool is_multi_av);
+
+//stack_init.c
+void	free_stack(t_stack_node **stack);
+void	create_node(t_stack_node **stack, int number);
+void	init_stack(t_stack_node **a, char **arr, bool is_multi_av);
+
 #endif
