@@ -1,48 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations_swap.c                                  :+:      :+:    :+:   */
+/*   operations_rotate.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kokaimov <kokaimov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 22:47:43 by kokaimov          #+#    #+#             */
-/*   Updated: 2024/02/26 22:47:43 by kokaimov         ###   ########.fr       */
+/*   Created: 2024/04/08 23:15:23 by kokaimov          #+#    #+#             */
+/*   Updated: 2024/04/08 23:15:23 by kokaimov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static void	swap(t_stack_node **stack)
+static void	rotate(t_stack_node **stack)
 {
-	if (stack_len(*stack) < 2)
+	t_stack_node	*lst_node;
+	if (NULL == stack || NULL == *stack)
 		return ;
+	lst_node = my_lstlast(*stack);
+	lst_node->next = *stack;
 	*stack = (*stack)->next;
-	(*stack)->prev->prev = *stack;
-	(*stack)->prev->next = (*stack)->next;
-	if ((*stack)->next)
-		(*stack)->next->prev = (*stack)->prev;
-	(*stack)->next = (*stack)->prev;
 	(*stack)->prev = NULL;
+	lst_node->next->prev = lst_node;
+	lst_node->next->next = NULL;
 }
 
-void	sa(t_stack_node **a, bool to_print)
+void	ra(t_stack_node **a, bool to_print)
 {
-	swap(a);
+	rotate(a);
 	if (to_print)
-		write(1, "sa\n", 3);
+		write(1, "ra\n", 3);
 }
 
-void	sb(t_stack_node **b, bool to_print)
+void	rb(t_stack_node **b, bool to_print)
 {
-	swap(b);
+	rotate(b);
 	if (to_print)
-		write(1, "sb\n", 3);
+		write(1, "rb\n", 3);
 }
 
-void	ss(t_stack_node **a, t_stack_node **b, bool to_print)
+void	rr(t_stack_node **a, t_stack_node **b, bool to_print)
 {
-	swap(a);
-	swap(b);
+	rotate(a);
+	rotate(b);
 	if (to_print)
-		write(1, "ss\n", 3);
+		write(1, "rr\n", 3);
 }
