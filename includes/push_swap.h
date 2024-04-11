@@ -6,7 +6,7 @@
 /*   By: kokaimov <kokaimov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 15:13:09 by kokaimov          #+#    #+#             */
-/*   Updated: 2024/02/23 15:13:09 by kokaimov         ###   ########.fr       */
+/*   Updated: 2024/04/09 01:33:34 by kokaimov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 typedef struct s_stack_node
 {
 	int					value;
-	int					current_position; // current_index
+	int					current_position;
 	int					final_index;
 	int					push_price;
 	bool				above_median;

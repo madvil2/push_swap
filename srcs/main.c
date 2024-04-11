@@ -12,6 +12,79 @@
 
 #include "../includes/push_swap.h"
 
+static int	calculate_average(t_stack_node *stack)
+{
+	int	sum;
+	int	count;
+
+	if (stack == NULL)
+		return (0);
+	sum = 0;
+	count = 0;
+	while (stack)
+	{
+		sum += stack->value;
+		count++;
+		stack = stack->next;
+	}
+	return (sum / count);
+}
+
+void	average_divider_sort(t_stack_node **a, t_stack_node **b)
+{
+	int	average;
+	int	len;
+	int	i;
+
+	len = stack_len(*a);
+	i = 0;
+	average = calculate_average(*a);
+	while (i < len)
+	{
+		if ((*a)->value < average)
+		{
+			pb(a, b, true);
+			rb(b, true);
+			average = calculate_average(*a);
+		}
+		else
+			ra(a, true);
+		i++;
+	}
+}
+
+static t_stack_node	*find_highest(t_stack_node *stack)
+{
+	int	highest_value;
+	t_stack_node	*highest_node;
+	if (NULL == stack)
+		return (NULL);
+	highest_value = INT_MIN;
+	while (stack)
+	{
+		if (stack->value > highest_value)
+		{
+			highest_value = stack->value;
+			highest_node = stack;
+		}
+		stack = stack->next;
+	}
+	return (highest_node);
+}
+
+void	drei_sort(t_stack_node **a)
+{
+	t_stack_node	*highest;
+
+	highest = find_highest(*a);
+	if (*a == highest)
+		ra(a, true);
+	else if ((*a)->next == highest)
+		rra(a, true);
+	if ((*a)->value > (*a)->next->value)
+		sa(a, true);
+}
+
 int	main(int ac, char **av)
 {
 	t_stack_node	*a;
@@ -26,7 +99,12 @@ int	main(int ac, char **av)
 	init_stack(&a, av, ac == 2);
 	if (!is_stack_sorted(a))
 	{
-		printf("not sorted");
+		if (stack_len(a) == 2)
+			sa(&a, true);
+		else if (stack_len(a) == 3)
+			drei_sort(&a);
+		else
+			printf("not sorted");
 	}
 	else
 		printf("Sorted");

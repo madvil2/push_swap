@@ -12,6 +12,10 @@ LFLAGS :=			-L $(LIB_PATH) -lft
 
 HFILES :=			push_swap
 FILES :=			main\
+					operations_push\
+					operations_reverse_rotate\
+					operations_rotate\
+					operations_swap\
 					stack_init\
 					utils
 LIB :=				$(LIB_PATH)libft.a
