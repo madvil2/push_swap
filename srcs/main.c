@@ -85,6 +85,25 @@ void	drei_sort(t_stack_node **a)
 		sa(a, true);
 }
 
+int	calculate_push_price(t_stack_node **b)
+{
+	t_stack_node *current = *b;
+	int	index;
+	int	total_rotation;
+	int	stack_len_b;
+
+	index = 0;
+	total_rotation = 0;
+	stack_len_b = stack_len(*b);
+	while (current)
+	{
+		total_rotation = index;
+		if (total_rotation > stack_len_b / 2)
+			total_rotation = stack_len_b - index;
+		current->push_price = total_rotation;
+	}
+}
+
 int	main(int ac, char **av)
 {
 	t_stack_node	*a;
