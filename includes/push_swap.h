@@ -22,7 +22,6 @@ typedef struct s_stack_node
 {
 	int					value;
 	int					current_position;
-	int					final_index;
 	int					push_price;
 	bool				above_median;
 	bool				cheapest;
