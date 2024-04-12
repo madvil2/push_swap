@@ -12,7 +12,7 @@
 
 #include "../includes/push_swap.h"
 
-int		stack_len(t_stack_node *stack)
+int	stack_len(t_stack_node *stack)
 {
 	int	count;
 

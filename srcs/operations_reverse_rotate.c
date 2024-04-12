@@ -15,7 +15,7 @@
 static void	reverse_rotate(t_stack_node **stack)
 {
 	t_stack_node	*lst;
-	int	len;
+	int				len;
 
 	len = stack_len(*stack);
 	if (NULL == *stack || NULL == stack || 1 == len)

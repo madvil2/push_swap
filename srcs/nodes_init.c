@@ -36,7 +36,7 @@ static void	set_target(t_stack_node *a, t_stack_node *b)
 {
 	t_stack_node	*current_a;
 	t_stack_node	*target_node;
-	long	best_index;
+	long			best_index;
 
 	while (b)
 	{
@@ -61,7 +61,7 @@ static void	set_target(t_stack_node *a, t_stack_node *b)
 
 static void	set_cheapest(t_stack_node *b)
 {
-	long	best_value;
+	long			best_value;
 	t_stack_node	*best_node;
 
 	if (NULL == b)

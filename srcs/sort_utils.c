@@ -12,7 +12,8 @@
 
 #include "../includes/push_swap.h"
 
-static void	rotate_both(t_stack_node **a, t_stack_node **b, t_stack_node *cheapest)
+static void	rotate_both(t_stack_node **a,
+						t_stack_node **b, t_stack_node *cheapest)
 {
 	while (*a != cheapest->target_node && *b != cheapest)
 		rr(a, b);
@@ -20,7 +21,8 @@ static void	rotate_both(t_stack_node **a, t_stack_node **b, t_stack_node *cheape
 	set_position(*b);
 }
 
-static void	reverse_rotate_both(t_stack_node **a, t_stack_node **b, t_stack_node *cheapest)
+static void	reverse_rotate_both(t_stack_node **a,
+								t_stack_node **b, t_stack_node *cheapest)
 {
 	while (*a != cheapest->target_node && *b != cheapest)
 		rrr(a, b);
@@ -28,7 +30,8 @@ static void	reverse_rotate_both(t_stack_node **a, t_stack_node **b, t_stack_node
 	set_position(*b);
 }
 
-void	finish_rotation(t_stack_node **stack, t_stack_node *top_node, char stack_name)
+void	finish_rotation(t_stack_node **stack,
+						t_stack_node *top_node, char stack_name)
 {
 	while (*stack != top_node)
 	{
@@ -69,7 +72,8 @@ void	move_nodes(t_stack_node **a, t_stack_node **b)
 	cheapest = return_cheapest(*b);
 	if (cheapest->above_median && cheapest->target_node->above_median)
 		rotate_both(a, b, cheapest);
-	else if (!(cheapest->above_median) && !(cheapest->target_node->above_median))
+	else if (!(cheapest->above_median)
+		&& !(cheapest->target_node->above_median))
 		reverse_rotate_both(a, b, cheapest);
 	finish_rotation(b, cheapest, 'b');
 	finish_rotation(a, cheapest->target_node, 'a');

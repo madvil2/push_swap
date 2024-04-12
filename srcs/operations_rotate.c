@@ -15,6 +15,7 @@
 static void	rotate(t_stack_node **stack)
 {
 	t_stack_node	*lst_node;
+
 	if (NULL == stack || NULL == *stack)
 		return ;
 	lst_node = my_lstlast(*stack);

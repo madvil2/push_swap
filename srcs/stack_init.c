@@ -58,6 +58,35 @@ static int	check_is_duplicate(t_stack_node *a, int number)
 	return (0);
 }
 
+static void	create_node(t_stack_node **stack, int number)
+{
+	t_stack_node	*node;
+	t_stack_node	*last_node;
+
+	if (stack)
+	{
+		node = malloc(sizeof(t_stack_node));
+		if (!node)
+			return ;
+		node->value = number;
+		node->next = NULL;
+		node->prev = NULL;
+		node->current_position = 0;
+		node->push_price = 0;
+		node->above_median = false;
+		node->cheapest = false;
+		node->target_node = NULL;
+		if (!*stack)
+			*stack = node;
+		else
+		{
+			last_node = my_lstlast(*stack);
+			last_node->next = node;
+			node->prev = last_node;
+		}
+	}
+}
+
 void	init_stack(t_stack_node **a, char **arr, bool is_multi_av)
 {
 	long long int	number;
@@ -78,30 +107,4 @@ void	init_stack(t_stack_node **a, char **arr, bool is_multi_av)
 	}
 	if (is_multi_av)
 		free_matrix(arr);
-}
-
-void	create_node(t_stack_node **stack, int number)
-{
-	t_stack_node	*node;
-	t_stack_node	*last_node;
-
-	if (stack)
-	{
-		node = malloc(sizeof(t_stack_node));
-		if (!node)
-			return ;
-		node->next = NULL;
-		node->value = number;
-		if (!*stack)
-		{
-			*stack = node;
-			node->prev = NULL;
-		}
-		else
-		{
-			last_node = my_lstlast(*stack);
-			last_node->next = node;
-			node->prev = last_node;
-		}
-	}
 }

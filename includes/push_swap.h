@@ -31,49 +31,49 @@ typedef struct s_stack_node
 }	t_stack_node;
 
 //utils.c
-int		stack_len(t_stack_node *stack);
-bool	is_stack_sorted(t_stack_node *stack);
+int				stack_len(t_stack_node *stack);
+bool			is_stack_sorted(t_stack_node *stack);
 t_stack_node	*my_lstlast(t_stack_node *lst);
-void	free_on_error(t_stack_node **a, char **arr, bool is_multi_av);
+void			free_on_error(t_stack_node **a, char **arr, bool is_multi_av);
 
-//stack_init.c
-void	free_stack(t_stack_node **stack);
-void	create_node(t_stack_node **stack, int number);
-void	init_stack(t_stack_node **a, char **arr, bool is_multi_av);
+//stack_init.c 5/5
+void			free_stack(t_stack_node **stack);
+void			init_stack(t_stack_node **a, char **arr, bool is_multi_av);
 
 //operations_push.c 3/5
-void	pa(t_stack_node **a, t_stack_node **b);
-void	pb(t_stack_node **a, t_stack_node **b);
+void			pa(t_stack_node **a, t_stack_node **b);
+void			pb(t_stack_node **a, t_stack_node **b);
 
 //operations_reverse_rotate.c 4/5
-void	rra(t_stack_node **a);
-void	rrb(t_stack_node **b);
-void	rrr(t_stack_node **a, t_stack_node **b);
+void			rra(t_stack_node **a);
+void			rrb(t_stack_node **b);
+void			rrr(t_stack_node **a, t_stack_node **b);
 
 //operations_rotate.c
-void	ra(t_stack_node **a);
-void	rb(t_stack_node **b);
-void	rr(t_stack_node **a, t_stack_node **b);
+void			ra(t_stack_node **a);
+void			rb(t_stack_node **b);
+void			rr(t_stack_node **a, t_stack_node **b);
 
 //operations_swap.c
-void	sa(t_stack_node **a);
-void	sb(t_stack_node **b);
-void	ss(t_stack_node **a, t_stack_node **b);
+void			sa(t_stack_node **a);
+void			sb(t_stack_node **b);
+void			ss(t_stack_node **a, t_stack_node **b);
 
 //divider_sort.c 2/5
-void	average_divider_sort(t_stack_node **a, t_stack_node **b);
+void			average_divider_sort(t_stack_node **a, t_stack_node **b);
 
 //exceptions.c 4/5
 t_stack_node	*find_smallest(t_stack_node *stack);
-void	drei_sort(t_stack_node **a);
-void	handle_five(t_stack_node **a, t_stack_node **b);
+void			drei_sort(t_stack_node **a);
+void			handle_five(t_stack_node **a, t_stack_node **b);
 
 //nodes_init.c 5/5
-void	set_position(t_stack_node *stack);
-void	init_nodes(t_stack_node *a, t_stack_node *b);
+void			set_position(t_stack_node *stack);
+void			init_nodes(t_stack_node *a, t_stack_node *b);
 
 //sort_utils.c 5/5
-void	finish_rotation(t_stack_node **stack, t_stack_node *top_node, char stack_name);
-void	move_nodes(t_stack_node **a, t_stack_node **b);
+void			finish_rotation(t_stack_node **stack,
+					t_stack_node *top_node, char stack_name);
+void			move_nodes(t_stack_node **a, t_stack_node **b);
 
 #endif

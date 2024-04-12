@@ -14,9 +14,9 @@
 
 static t_stack_node	*find_highest(t_stack_node *stack)
 {
-	int	highest_value;
-
+	int				highest_value;
 	t_stack_node	*highest_node;
+
 	if (NULL == stack)
 		return (NULL);
 	highest_value = INT_MIN;
@@ -34,9 +34,9 @@ static t_stack_node	*find_highest(t_stack_node *stack)
 
 t_stack_node	*find_smallest(t_stack_node *stack)
 {
-	long	smallest_value;
-
+	long			smallest_value;
 	t_stack_node	*smallest_node;
+
 	if (NULL == stack)
 		return (NULL);
 	smallest_value = LONG_MAX;

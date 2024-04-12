@@ -2,3 +2,5 @@ cmake-build-debug
 .obj/
 .idea/
 push_swap
+push_swap_visualizer/
+libft/

@@ -12,10 +12,10 @@
 
 #include "../includes/push_swap.h"
 
-void	push_swap(t_stack_node **a, t_stack_node **b)
+static void	push_swap(t_stack_node **a, t_stack_node **b)
 {
 	t_stack_node	*smallest;
-	int	len_a;
+	int				len_a;
 
 	len_a = stack_len(*a);
 	if (len_a == 5)
@@ -51,7 +51,8 @@ int	main(int ac, char **av)
 	{
 		av = ft_split(av[1], ' ');
 		init_stack(&a, av, ac == 2);
-	} else
+	}
+	else
 		init_stack(&a, av + 1, 0);
 	if (!is_stack_sorted(a))
 	{
