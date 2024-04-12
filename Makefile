@@ -11,11 +11,15 @@ IFLAGS :=			-I $(INC_PATH) -I $(LIB_PATH)
 LFLAGS :=			-L $(LIB_PATH) -lft
 
 HFILES :=			push_swap
-FILES :=			main\
+FILES :=			divider_sort\
+					exceptions\
+					main\
+					nodes_init\
 					operations_push\
 					operations_reverse_rotate\
 					operations_rotate\
 					operations_swap\
+					sort_utils\
 					stack_init\
 					utils
 LIB :=				$(LIB_PATH)libft.a
