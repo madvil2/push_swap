@@ -14,8 +14,8 @@
 
 static int	calculate_average(t_stack_node *stack)
 {
-	int	sum;
-	int	count;
+	long	sum;
+	int		count;
 
 	if (stack == NULL)
 		return (0);
